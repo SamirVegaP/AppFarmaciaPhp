@@ -63,6 +63,7 @@
         $sql = "SELECT MAX(cliId) FROM client";
         $con=mysqli_connect("localhost","root","","bd_farm");
         $ejecutar = mysqli_query($con, $sql);
+        $fila = mysqli_fetch_array($ejecutar);
         if($ejecutar){
             $id = $fila['MAX(cliId)'] + 1;    
         }

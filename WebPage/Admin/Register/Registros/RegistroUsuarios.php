@@ -56,6 +56,7 @@
         $sql = "SELECT MAX(useId) FROM user";
         $con=mysqli_connect("localhost","root","","bd_farm");
         $ejecutar = mysqli_query($con, $sql);
+        $fila = mysqli_fetch_array($ejecutar);
         if($ejecutar){
             $id = $fila['MAX(useId)'] + 1;    
         }

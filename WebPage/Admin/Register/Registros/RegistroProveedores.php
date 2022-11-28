@@ -12,7 +12,7 @@
     <div class="formall">
         <form action="RegistroProveedores.php" method="post" class="formInsert">
         <div class = "sectionForm Cent">
-            <h2>DNI: </h2>
+            <h2>RUC: </h2>
             <input type="text" name="supRUC" placeholder = "Inserte su RUC">
         </div>
         <div class = "sectionForm Sec">
@@ -52,6 +52,7 @@
         $sql = "SELECT MAX(supId) FROM supplier";
         $con=mysqli_connect("localhost","root","","bd_farm");
         $ejecutar = mysqli_query($con, $sql);
+        $fila = mysqli_fetch_array($ejecutar);
         if($ejecutar){
             $id = $fila['MAX(supId)'] + 1;    
         }
