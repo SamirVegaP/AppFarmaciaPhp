@@ -29,11 +29,11 @@
         </div>
         <div class = "sectionForm Sec">
             <h2> Banco: </h2>
-            <input type="email" name="supBank" placeholder = "Inserte Banco">
+            <input type="text" name="supBank" placeholder = "Inserte Banco">
         </div>
         <div class = "sectionForm Cent">
             <h2> Cuenta de Banco: </h2>
-            <input type="email" name="supAccount" placeholder = "Inserte Cuenta de Banco">
+            <input type="text" name="supAccount" placeholder = "Inserte Cuenta de Banco">
         </div>
         <div class="sectionBtn Sec">
             <input type="submit" name = "supCreate" value="Añadir Proveedor">
@@ -65,7 +65,7 @@
         $sql2 = "INSERT INTO `supplier` VALUES ('$id', '$supname', '$supRUC', '$supaddress', '$supphone', '$supBank', '$supAccount')";
         $exe = mysqli_query($con, $sql2);
         if($exe){
-            header('location: RegistroClientes.php');    
+            header('location: RegistroProveedores.php');    
         }
     }
     ?>
@@ -73,14 +73,12 @@
         <table>
             <thead>
                 <tr>
-                    <td>DNI</td>
-                    <td>Nombre</td>
-                    <td>Apellidos</td>
-                    <td>Género</td>
                     <td>RUC</td>
+                    <td>Nombre</td>
                     <td>Dirección</td>
                     <td>Teléfono</td>
-                    <td>Email</td>
+                    <td>Banco</td>
+                    <td>Cuenta</td>
                     <td>Editar</td>
                     <td>Eliminar</td>
                 </tr>
@@ -89,39 +87,35 @@
                 <?php
                 if(isset($_POST['Searcher'])){
                     $dato = $_POST['Buscador'];
-                    $consulta = "SELECT * FROM client WHERE dni LIKE '%$dato%'";
+                    $consulta = "SELECT * FROM supplier WHERE supId LIKE '%$dato%'";
                 }else{
-                    $consulta = "SELECT * FROM client";
+                    $consulta = "SELECT * FROM supplier";
                 }
                 $conexion=mysqli_connect("localhost","root","","bd_farm");
                 $ejecutar = mysqli_query($conexion, $consulta);
                 $i = 0;
                 if($ejecutar){
                 while ($fila = mysqli_fetch_array($ejecutar)) {
-                    $id = $fila['cliId'];
-                    $dni = $fila['cliDNI'];
-                    $name = $fila['cliName'];
-                    $lastname = $fila['cliLastName'];
-                    $gender = $fila['cliGender'];
-                    $phone = $fila['cliPhone'];
-                    $address = $fila['cliAddress'];
-                    $ruc = $fila['cliRUC'];
-                    $email = $fila['cliEmail'];
+                    $id = $fila['supId'];
+                    $name = $fila['supName'];
+                    $phone = $fila['supPhone'];
+                    $address = $fila['supAddress'];
+                    $ruc = $fila['supRUC'];
+                    $bank = $fila['supBank'];
+                    $account = $fila['supAccount'];
                     $i++;  
                 ?>
                 <tr>
-                    <form action="crudclient.php" method="post">
-                        <input type="hidden" name="empId2" value = "<?php echo $id ?>">
-                        <td><input type="text" name="empDNI2" value = "<?php echo $dni ?>"></td>
-                        <td><input type="text" name="empName2" value = "<?php echo $name ?>"></td>
-                        <td><input type="text" name="empLastName2" value = "<?php echo $lastname ?>"></td>
-                        <td><input type="text" name="empGender2" value = "<?php echo $gender ?>"></td>
-                        <td><input type="text" name="empRUC2" value = "<?php echo $ruc ?>"></td>
-                        <td><input type="text" name="empAddress2" value = "<?php echo $address ?>"></td>
-                        <td><input type="text" name="empPhone2" value = "<?php echo $phone ?>"></td>
-                        <td><input type="text" name="empEmail2" value = "<?php echo $email ?>"></td>
-                        <td><input type="submit" name="cliEdit" value = "Editar"></td>
-                        <td><input type="submit" name="cliDelete" value = "Eliminar"></td>
+                    <form action="crudsupplier.php" method="post">
+                        <input type="hidden" name="supId2" value = "<?php echo $id ?>">
+                        <td><input type="text" name="supRUC2" value = "<?php echo $ruc ?>"></td>
+                        <td><input type="text" name="supName2" value = "<?php echo $name ?>"></td>
+                        <td><input type="text" name="supAddress2" value = "<?php echo $address ?>"></td>
+                        <td><input type="text" name="supPhone2" value = "<?php echo $phone ?>"></td>
+                        <td><input type="text" name="supBank2" value = "<?php echo $bank ?>"></td>
+                        <td><input type="text" name="supAccount2" value = "<?php echo $account ?>"></td>
+                        <td><input type="submit" name="supEdit" value = "Editar"></td>
+                        <td><input type="submit" name="supDelete" value = "Eliminar"></td>
                     </form>
                 </tr>
                 <?php

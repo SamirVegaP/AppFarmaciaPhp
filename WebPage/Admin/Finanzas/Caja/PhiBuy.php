@@ -4,7 +4,7 @@ include_once '../../../../Php/SessionFunctions/user_session.php';
 include_once '../../../../Php/SessionFunctions/buyout.php';
 $user = new User();
 $userSession = new UserSession();
-$buyout = new Seal();
+$buyout = new Buyout();
 ?>
 
 <!DOCTYPE html>
@@ -58,8 +58,8 @@ $buyout = new Seal();
     if (isset($_SESSION['user'])) {
         $user->setUser($userSession->getCurrentUser());
         $iduser = $user->getId();
-        if (isset($_SESSION['seal'])) {
-            $buyout->setBuyout($userSession->getCurrentSeal());
+        if (isset($_SESSION['buyout'])) {
+            $buyout->setBuyout($userSession->getCurrentBuyout());
             $idseal = $buyout->getId();
             $date = $buyout->getDate();
             $active = 1;
@@ -123,7 +123,7 @@ $buyout = new Seal();
         </div>
         <input type="hidden" name="tUser" value = "<?php echo $userSession->getCurrentUser()?>">
         <div class="sectionBtn Cent">
-            <input type="submit" name = "SealCreate" value="Generar Venta">
+            <input type="submit" name = "SealCreate" value="Generar Compra">
         </div>
     </form>
     <?php
@@ -132,7 +132,7 @@ $buyout = new Seal();
     <?php
     if ($active == 1) {
     ?>
-        <form action="functions.php" method="post" class="searcherform">
+        <form action="functions2.php" method="post" class="searcherform">
             <input type="submit" name="EndStore" value="Terminar Venta">
             <label for="Ventana" class="other">Añadir Producto</label>
         </form>
@@ -149,17 +149,17 @@ $buyout = new Seal();
             </thead>
             <tbody>
                 <?php
-                $consulta = "SELECT * FROM detailseal WHERE seaId = $idseal";
+                $consulta = "SELECT * FROM detailbuyout WHERE buyId = $idseal";
                 echo "<script> console.log('$consulta'); </script>";
                 $conexion=mysqli_connect("localhost","root","","bd_farm");
                 $ejecutar = mysqli_query($conexion, $consulta);
                 $i = 0;
                 if($ejecutar){
                 while ($fila = mysqli_fetch_array($ejecutar)) {
-                    $id = $fila['seaId'];
+                    $id = $fila['buyId'];
                     $idP = $fila['proId'];
                     $cdtp = $fila['proQuantity'];
-                    $costp = $fila['proImport'];
+                    $costp = $fila['proCost'];
                     $consulta2 = "SELECT * FROM product WHERE proId = $idP";
                     $conexion2=mysqli_connect("localhost","root","","bd_farm");
                     $ejecutar2 = mysqli_query($conexion2, $consulta2);
@@ -171,7 +171,7 @@ $buyout = new Seal();
                     $i++;  
                 ?>
                 <tr>
-                    <form action="functions.php" method="post">
+                    <form action="functions2.php" method="post">
                         <input type="hidden" name="proId2" value = "<?php echo $id ?>">
                         <input type="hidden" name="proId22" value = "<?php echo $idP ?>">
                         <td><input type="text" name="proName2" value = "<?php echo $proName ?>"></td>

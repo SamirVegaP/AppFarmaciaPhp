@@ -134,6 +134,7 @@ $seal = new Seal();
     ?>
         <form action="functions.php" method="post" class="searcherform">
             <input type="submit" name="EndStore" value="Terminar Venta">
+            <input type="submit" name="Boleta" value="Generar Boleta">
             <label for="Ventana" class="other">Añadir Producto</label>
         </form>
         <div class="Table">

@@ -43,6 +43,10 @@ if (isset($_POST['proDelete'])) {
     }
 }
 
+if (isset($_POST['Boleta'])) {
+    header("location: http://localhost/SisFarm/WebPage/Admin/Reportes/Reports/BoletadeVenta.php ");
+}
+
 if (isset($_POST['EndStore'])){
     $idUse = $userSession->getCurrentUser();
     if (isset($_SESSION['buyout'])) {

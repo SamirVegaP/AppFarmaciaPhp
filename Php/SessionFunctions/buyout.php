@@ -1,7 +1,7 @@
 <?php
 include 'database.php';
 
-class Seal extends DB2{
+class Buyout extends DB2{
     private $nombre;
     private $username;
 
@@ -10,29 +10,28 @@ class Seal extends DB2{
         $query->execute(['user' => $seal]);
         
         foreach ($query as $currentUser) {
-            $this->seaId = $currentUser['buyId'];
-            $this->seaDate = $currentUser['buyDate'];
-            $this->seaVoucher = $currentUser['buyPayment'];
-            $this->buyVoucher = $currentUser['buyVoucher'];
-            $this->cliId = $currentUser['supId'];
+            $this->buyId = $currentUser['buyId'];
+            $this->buyDate = $currentUser['buyDate'];
+            $this->buyPayment = $currentUser['buyPayment'];
+            $this->supId = $currentUser['supId'];
             $this->empId = $currentUser['empId'];
         }
     }
 
     public function getID(){
-        return $this->seaId;
+        return $this->buyId;
     }
 
     public function getDate(){
-        return $this->seaDate;
+        return $this->buyDate;
     }
 
     public function getVoucher(){
-        return $this->seaVoucher;
+        return $this->buyVoucher;
     }
 
     public function getClient(){
-        return $this->cliId;
+        return $this->supId;
     }
     
     public function getEmp(){
