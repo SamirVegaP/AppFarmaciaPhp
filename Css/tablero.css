@@ -1,0 +1,378 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: black;
+    font-family: 'Aspira';
+    overflow-y: hidden;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: black;
+  font-family: 'Aspira';
+  border-bottom: 2px solid black;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+td input:-webkit-autofill,
+td input:-webkit-autofill:hover, 
+td input:-webkit-autofill:focus,
+td textarea:-webkit-autofill,
+td textarea:-webkit-autofill:hover,
+td textarea:-webkit-autofill:focus,
+td select:-webkit-autofill,
+td select:-webkit-autofill:hover,
+td select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: black;
+  font-family: 'Aspira';
+  border-bottom: 0px solid black;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.formall{
+    position: absolute;
+    bottom: 100vh;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(245, 245, 245,0.5);
+    backdrop-filter: blur(10px);
+    transition: 0.5s ease-in-out;
+}
+
+.formInsert{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1.5em;
+    padding: 1em;
+    background-color: rgba(217, 217, 217, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    z-index: 999;
+}
+
+.formEr{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1.5em;
+    padding: 1em;
+    background-color: rgba(217, 217, 217, 0.5);
+    border-radius: 20px;
+    z-index: 0;
+}
+
+.formInsert input[type="text" i], .formInsert input[type="date" i]{
+    appearance: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid black;
+    width: 20vw;
+    box-sizing: border-box;
+    padding-left: 1em;
+}
+.formInsert input[type="text" i]:focus,  .formInsert input[type="date" i]:focus{
+    outline: none;
+}
+.formInsert input[type="text" i]::placeholder{
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Aspira';
+}
+
+.formInsert input[type="email" i]{
+    appearance: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid black;
+    width: 20vw;
+    box-sizing: border-box;
+    padding-left: 1em;
+}
+.formInsert input[type="email" i]:focus{
+    outline: none;
+}
+.formInsert input[type="email" i]::placeholder{
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Aspira';
+}
+
+.formInsert input[type="password" i]{
+    appearance: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid black;
+    width: 20vw;
+    box-sizing: border-box;
+    padding-left: 1em;
+}
+.formInsert input[type="password" i]:focus{
+    outline: none;
+}
+.formInsert input[type="password" i]::placeholder{
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Aspira';
+}
+.formInsert input[type="submit" i]{
+    appearance: none;
+    padding: 1em 1.2em;
+    border: none;
+    font-family: 'Aspira';
+    font-size: 1em;
+    border-radius: 20px;
+    color:white;
+    background-color: #ff1616;
+}
+.sectionForm{
+    margin: 1em;
+}
+.sectionBtn{
+    margin: 1em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.Cent{
+    width: 100%;
+}
+
+.Third{
+    width: 33.3%;
+}
+
+.Sec{
+    width: 40%;
+    box-sizing: border-box;
+}
+
+.searcherform{
+    margin: 1.5em;
+    padding: 1em;
+}
+
+.searcherform input[type = "submit"]{
+    color: white;
+}
+
+.searcherform label{
+    color: white;
+}
+
+input[type="search" i]{
+    appearance: none;
+    border: none;
+    border-bottom: 2px solid black;
+    font-family: 'Aspira';
+}
+
+input[type="search" i]:focus{
+    outline: none;
+}
+
+input[type="search" i]::-webkit-search-cancel-button{
+    position:relative;
+    right:20px;  
+    -webkit-appearance: none;
+    height: 10px;
+    width: 10px;
+    content: "x";
+    border-radius:10px;
+    background: red;
+}
+
+table{
+    display: flex;
+    flex-direction: row;
+}
+
+.Table{
+    margin: 1.5em;
+    padding: 0em;
+}
+
+tr{
+    display: flex;
+    flex-direction: column;
+}
+
+td{
+    height: 4vh;
+    padding: 10px 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+thead td{
+    height: calc(5vh-2px);
+    background-color: black;
+    font-family: 'Aspira';
+    color: #d9d9d9;
+    border-bottom: 2px solid white;
+}
+
+thead td:nth-child(1){
+    border-top-left-radius: 10px;
+}
+
+thead td:nth-last-child(1){
+    border-bottom-left-radius: 10px;
+}
+
+.other{
+    appearance: none;
+    padding: 0.5em 0.6em;
+    margin-left: 2vw;
+    border: none;
+    font-family: 'Aspira';
+    font-size: 1em;
+    border-radius: 10px;
+    color: white;
+    background-color: #ff1616;
+}
+
+.Label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.Label h2{
+    appearance: none;
+    padding: 1em 1.2em;
+    border: none;
+    font-family: 'Aspira';
+    font-size: 1em;
+    border-radius: 20px;
+    color: white;
+    background-color: #ff1616;
+}
+tbody{
+    display: flex;
+    flex-direction: row;
+}
+tbody td{
+    height: calc(5vh-2px);
+    font-family: 'Aspira';
+    border-bottom: 2px solid white;
+    margin-right: 5px;
+    margin-left: 5px;
+    background-color: #d9d9d9;
+}
+
+tbody td input{
+    width: 100%;
+    height: 100%;
+    appearance: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border: none;
+    background-color: #d9d9d9;
+}
+
+tbody td input:focus{
+    outline: none;
+}
+
+tbody td input[type="submit" i]{
+    width: fit-content;
+    height: fit-content;
+}
+#Ventana{
+    display: none;
+}
+#Ventana:checked ~ .formall{
+    bottom: 0;
+}
+
+input[type="submit" i]{
+    appearance: none;
+    padding: 0.5em 0.6em;
+    border: none;
+    font-family: 'Aspira';
+    font-size: 1em;
+    border-radius: 10px;
+    color: white;
+    background-color: #ff1616;
+}
+
+.SecUser{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.contain_section{
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.contain_section input{
+    appearance: none;
+    margin: 1vh;
+    border: none;
+    font-family: 'Aspira';
+    font-size: 0.9em;
+    border-bottom: 2px solid black;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.contain_section input:focus{
+    outline: none;
+}
+
+.btn_section{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.sectionForm input[type="text" i]{
+    appearance: none;
+    margin: 1vh;
+    border: none;
+    font-family: 'Aspira';
+    font-size: 0.9em;
+    border-bottom: 2px solid black;
+    background: none;
+}
+
+.inputList{
+    appearance: none;
+    margin: 1vh;
+    border: none;
+    font-family: 'Aspira';
+    font-size: 0.9em;
+    border-bottom: 2px solid black;
+    background: none;
+}
+
+.sectionForm input:focus{
+    outline: none;
+}

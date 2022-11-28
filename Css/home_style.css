@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.BG{
+    position: relative;
+    top: 0;
+    z-index: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.BG img{
+    position: absolute;
+    height: 100%;
+    right: 0;
+}
+
+.conForm{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ImgReference{
+    width: 60%;
+    position: absolute;
+    z-index: 3;
+    top: 22%;
+}
+form{
+    width: 90%;
+    margin: auto;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    padding-top: 21vh;
+    border-radius: 20px;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+.conInput{
+    border-top: 1px solid rgba(245, 245, 245, 0.7);
+    display: flex;
+    flex-direction: column;
+    padding-left: 6vw;
+    padding-right: 6vw;
+    padding-top: 2vh;
+}
+
+.conInput h2{
+    font-family: 'Aspira';
+    font-weight: 200;
+    color: #d9d9d9;
+}
+
+input[type="text" i]{
+    appearance: none;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid rgba(245, 245, 245, 0.7);
+    color: whitesmoke;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    padding-left: 1vw;
+    padding-bottom: 2px;
+    font-size: 0.9em;
+}
+
+input[type="text" i]:focus{
+    outline: none;
+}
+
+input[type="password" i]::placeholder{
+    color: rgba(245, 245, 245, 0.7);
+}
+input[type="password" i]{
+    appearance: none;
+    border:none;
+    background-color: rgba(0, 0, 0, 0);
+    border-bottom: 2px solid rgba(245, 245, 245, 0.7);
+    color: whitesmoke;
+    margin-top: 2vh;
+    margin-bottom: 4vh;
+    padding-left: 1vw;
+    padding-bottom: 2px;
+    font-size: 0.9em;
+}
+
+input[type="password" i]:focus{
+    outline: none;
+}
+
+input[type="text" i]::placeholder{
+    color: rgba(245, 245, 245, 0.7);
+}
+
+input[type="submit" i]{
+    appearance: none;
+    border: none;
+    box-sizing: content-box;
+    width: fit-content;
+    padding: 0.6em 1em;
+    align-self: center;
+    border-radius: 10px;
+    color: #d9d9d9;
+    background-color: #ff1616;
+    font-family: 'Aspira';
+    font-weight: 300;
+    font-size: 1em;
+}
+@media only screen and (min-width: 992px) {
+    .BG img{
+        height: max-content;
+        width: 100%;
+    }
+    .conForm{
+        flex-direction: row;
+    }
+    .ImgReference{
+        position: absolute;
+        width: 20%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    form{
+        width: 30%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
